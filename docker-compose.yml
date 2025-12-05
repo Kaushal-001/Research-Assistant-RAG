@@ -1,0 +1,51 @@
+version: "3.8"
+
+services:
+  fastapi_backend:
+    build: .
+    container_name: fastapi_backend
+    restart: unless-stopped
+    # Persist vector DB and papers inside the shared named volume
+    volumes:
+      - data_volume:/app/data
+    environment:
+      - PYTHONUNBUFFERED=1
+    ports:
+      - "8000:8000"    # optional: expose backend to host
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8000/ || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  streamlit_frontend:
+    build: .
+    container_name: streamlit_frontend
+    restart: unless-stopped
+    depends_on:
+      - fastapi_backend
+    volumes:
+      - data_volume:/app/data
+    environment:
+      - BACKEND_URL=http://fastapi_backend:8000
+      - STREAMLIT_SERVER_HEADLESS=true
+      - STREAMLIT_SERVER_ENABLECORS=false
+      - STREAMLIT_SERVER_PORT=8501
+      - PYTHONUNBUFFERED=1
+    ports:
+      - "8501:8501"    # Streamlit accessible from host
+    # Run Streamlit explicitly and bind to 0.0.0.0 so container accepts external connections
+    command:
+      - streamlit
+      - run
+      - streamlit_ui.py
+      - --server.port
+      - "8501"
+      - --server.address
+      - "0.0.0.0"
+      - --server.enableCORS
+      - "false"
+
+volumes:
+  data_volume:
+    name: research_assistant_data
