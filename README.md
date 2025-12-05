@@ -18,9 +18,7 @@ This assistant can:
 Click the thumbnail below to watch the demo:
 
 <a href="https://drive.google.com/file/d/1QT47GJFbBSRQAYSJo8BBmHzdmoSqlSdM/view?usp=sharing" target="_blank">
-  <img src="[url=https://postimg.cc/Q99qx8Tk][img]https://i.postimg.cc/Q99qx8Tk/Screenshot-2025-12-05-at-9-04-35-PM.png[/img][/url]" 
-       alt="Demo Video" 
-       width="600">
+ <img width="600" height="400" alt="Image" src="https://github.com/user-attachments/assets/c52162d9-2298-48ce-8510-54e5cde6129e" />
 </a>
 
 Or open directly:  
