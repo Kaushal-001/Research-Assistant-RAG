@@ -1,2 +1,67 @@
-# Research-Assistant-RAG
-A hybrid RAG-powered AI Research Assistant that answers technical questions using Vector DB as the primary source and automatically falls back to Arxiv search when local data is missing. The system also generates clear mathematical explanations, equations, and related paper recommendations, making it a full-fledged research exploration tool.
+# 🔍 AI Research Assistant — RAG + Groq Llama 3 + FastAPI + Streamlit
+
+An intelligent **AI Research Assistant** built using Retrieval-Augmented Generation (RAG),  
+Groq’s ultra-fast Llama 3 models, FAISS vector search, and a clean Streamlit UI.
+
+This assistant can:
+- Retrieve and understand scientific papers  
+- Answer complex research questions  
+- Generate math-heavy explanations in LaTeX  
+- Summarize papers  
+- Perform hybrid reasoning using local DB + arXiv search  
+
+
+---
+
+## 🎥 Demo Video
+
+Click the thumbnail below to watch the demo:
+
+<a href="https://drive.google.com/file/d/1QT47GJFbBSRQAYSJo8BBmHzdmoSqlSdM/view?usp=sharing" target="_blank">
+  <img src="[url=https://postimg.cc/Q99qx8Tk][img]https://i.postimg.cc/Q99qx8Tk/Screenshot-2025-12-05-at-9-04-35-PM.png[/img][/url]" 
+       alt="Demo Video" 
+       width="600">
+</a>
+
+Or open directly:  
+👉 **https://drive.google.com/file/d/1QT47GJFbBSRQAYSJo8BBmHzdmoSqlSdM/view?usp=sharing**
+
+---
+
+## 🚀 Features
+
+### 🔎 **1. Hybrid Retrieval**
+- Retrieves relevant chunks from your vector DB  
+- Searches arXiv for related academic papers  
+- Combines both sources intelligently  
+
+### 🧠 **2. Advanced LLM Reasoning**
+Uses **Groq’s Llama 3** for:
+- Scientific explanations  
+- Research-oriented answers  
+- LaTeX math formatting  
+- Multi-source synthesis  
+
+### 📊 **3. RAGAS Evaluation**
+Evaluates model performance using:
+- Faithfulness  
+- Answer Relevancy  
+- Context Precision  
+- Context Recall  
+
+### 🖥️ **4. Streamlit UI**
+A clean interface to:
+- Ask research questions  
+- Display retrieved context  
+- Show structured outputs  
+
+### ⚡ **5. FastAPI Backend**
+Handles:
+- Query → retrieval → LLM pipeline  
+- Paper search integration (arXiv API)  
+- Response formatting  
+
+---
+
+## 🏗️ Project Architecture
+
